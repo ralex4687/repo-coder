@@ -1,0 +1,236 @@
+
+header{
+  padding: 30px 30px ;
+  background-color: rgb(52, 129, 122);
+  display: flex;
+  justify-content: space-between;
+  
+  }
+
+header .hamburguesa{
+  color: #e6edf0;
+  font-size: 30px;
+  display: none;
+}
+
+
+.logo img{
+  height: 100;
+  width: auto; 
+  max-width: 180px;
+  }
+
+header nav{
+  display: flex;
+  align-items: center;
+  
+
+}
+
+header nav ul{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+header nav ul li .submenu {
+  display: none;
+  margin: 10px;
+
+}
+
+header nav ul li .submenu{
+  padding: 8px 12px ;
+  
+}
+
+header nav ul li:hover .submenu{
+  display: block;
+  position: absolute;
+  width: 150px;
+  background: rgb(52, 129, 122)
+  
+
+}
+
+header nav ul li a{
+      text-decoration: none;
+      color: #9cded5;
+      font-weight: bold;
+      font-size: 1rem;
+      
+     }
+
+header nav ul li a:hover{
+  color: bisque;
+}    
+
+@media(max-width:991px){
+  header .hamburguesa{
+   display: block;
+ }
+
+ header nav{
+  display: none;
+
+} 
+ main .grilla{
+  grid-template-columns: repeat(2, 330px);
+  grid-template-areas: 
+  "portafolio5 portafolio1"
+  "portafolio6 portafolio3"
+  "portafolio4 portafolio2"
+  ;
+}
+}
+
+@media(max-width:576px){
+ main .grilla{
+  grid-template-columns: repeat(1, 330px);
+  grid-template-areas: 
+  "portafolio5"
+  "portafolio3"
+  "portafolio6"
+  "portafolio4"
+  "portafolio2"
+  "portafolio1"
+  ;
+}
+}
+
+/* Grid */
+.grilla {
+  display: grid;
+  grid-template-columns: 300px 330px 300px;
+  grid-template-areas:
+    "portafolio5 portafolio1 portafolio3"
+    "portafolio2 portafolio6 portafolio4";
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  row-gap: 20px;
+  column-gap: 20px;
+}
+
+.grilla > div {
+  position: relative;
+  display: grid;
+  overflow: hidden;
+}
+
+.grilla > div img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  grid-area: 1 / 1;
+  border-radius: 5px;
+  z-index: 1;
+  transition: transform 0.3s ease;
+}
+
+
+.grilla > div::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  inset: 0;
+  background-color: rgba(40, 39, 39, 0.5);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 2;
+}
+
+.grilla > div p {
+  grid-area: 1 / 1;
+  align-self: center;
+  justify-self: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 3;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.grilla > div:hover {
+  cursor: pointer;
+}
+
+.grilla > div:hover::after {
+  opacity: 1;
+}
+
+.grilla > div:hover p {
+  opacity: 1;
+}
+
+.grilla > div:hover img {
+  transform: scale(1.05);
+}
+
+.grilla div:first-child {
+  grid-area: portafolio1;
+}
+.grilla div:nth-child(2) {
+  grid-area: portafolio2;
+}
+.grilla div:nth-child(3) {
+  grid-area: portafolio3;
+}
+.grilla div:nth-child(4) {
+  grid-area: portafolio4;
+}
+.grilla div:nth-child(5) {
+  grid-area: portafolio5;
+}
+.grilla div:last-child {
+  grid-area: portafolio6;
+}
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  text-align: center;   
+  min-height: 80vh; 
+  padding: 120px 40px 40px;
+  background-color:#e6edf0
+    }
+
+.servicio h1{
+  text-align: center;
+  margin-bottom: 30px;
+}   
+  
+     
+      main{
+        font-weight: 100;
+        color: #19413d;
+      }
+      main a{
+         color: #19413d;
+         text-decoration: none;
+    
+      }
+      
+      .centrada{
+        display: block;
+        margin: 20px auto;
+      }
+
+
+      h4{
+        text-align: center;
+      }
+
+
+    footer{
+      text-align: right;
+      padding: 20px;
+      color: #4895b3;
+    }
