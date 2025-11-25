@@ -172,38 +172,6 @@ footer{
 
 /* == Media Queries - Diseños responsivos == */
 
-@media(max-width:991px){
-  header .hamburguesa{
-   display: block;
- }
-
- header nav{
-  display: none;
-
-} 
- main .grilla{
-  grid-template-columns: repeat(2, 330px);
-  grid-template-areas: 
-  "portafolio5 portafolio1"
-  "portafolio6 portafolio3"
-  "portafolio4 portafolio2"
-  ;
-}
-}
-
-@media(max-width:576px){
- main .grilla{
-  grid-template-columns: repeat(1, 330px);
-  grid-template-areas: 
-  "portafolio5"
-  "portafolio3"
-  "portafolio6"
-  "portafolio4"
-  "portafolio2"
-  "portafolio1"
-  ;
-}
-}
 
 
 
