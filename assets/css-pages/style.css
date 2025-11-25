@@ -44,6 +44,7 @@ header{
   justify-content: space-between;
 }
 
+
 header nav{
   display: flex;
   align-items: center;
@@ -56,11 +57,16 @@ header nav ul{
   margin: 0;
   padding: 0;}
 
+header .navbar-brand img {
+    height: 50px; /* Limita la altura del logo */
+    width: auto;
+}
+
 .logo img{
   height: 100;
   width: auto; 
   max-width: 180px;
-  }
+}
 
 header .hamburguesa{
   color: #e6edf0;
