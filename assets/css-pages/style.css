@@ -1,10 +1,65 @@
 
+/* == Estilos de main == */
+
+main{
+  display: flex;
+  flex-direction: column;
+  align-items: center;   
+  justify-content: center; 
+  text-align: center;   
+  min-height: 80vh; 
+  padding: 120px 40px 40px;
+  background-color:#e6edf0;
+  font-weight: 100;
+  color: #19413d;
+}
+main a{
+  color: #19413d;
+  text-decoration: none;
+}
+
+.servicio h1{
+  text-align: center;
+  margin-bottom: 30px;
+}   
+
+
+      
+.centrada{
+  display: block;
+  margin: 20px auto;
+}
+
+
+h4{
+  text-align: center;
+}
+/* == Layout y secciones  == */
+    /* == Header ==*/
+
 header{
   padding: 30px 30px ;
   background-color: rgb(52, 129, 122);
   display: flex;
   justify-content: space-between;
-  
+}
+
+header nav{
+  display: flex;
+  align-items: center;
+}
+
+header nav ul{
+  display: flex;
+  list-style: none;
+  gap: 10px;
+  margin: 0;
+  padding: 0;}
+
+.logo img{
+  height: 100;
+  width: auto; 
+  max-width: 180px;
   }
 
 header .hamburguesa{
@@ -13,36 +68,13 @@ header .hamburguesa{
   display: none;
 }
 
-
-.logo img{
-  height: 100;
-  width: auto; 
-  max-width: 180px;
-  }
-
-header nav{
-  display: flex;
-  align-items: center;
-  
-
-}
-
-header nav ul{
-  display: flex;
-  list-style: none;
-  gap: 10px;
-  margin: 0;
-  padding: 0;
-}
 header nav ul li .submenu {
   display: none;
   margin: 10px;
-
 }
 
 header nav ul li .submenu{
-  padding: 8px 12px ;
-  
+  padding: 8px 12px ; 
 }
 
 header nav ul li:hover .submenu{
@@ -50,56 +82,29 @@ header nav ul li:hover .submenu{
   position: absolute;
   width: 150px;
   background: rgb(52, 129, 122)
-  
-
 }
 
 header nav ul li a{
-      text-decoration: none;
-      color: #9cded5;
-      font-weight: bold;
-      font-size: 1rem;
-      
-     }
+  text-decoration: none;
+  color: #9cded5;
+  font-weight: bold;
+  font-size: 1rem;      
+}
 
 header nav ul li a:hover{
   color: bisque;
 }    
 
-@media(max-width:991px){
-  header .hamburguesa{
-   display: block;
- }
+/* == Footer == */
 
- header nav{
-  display: none;
-
-} 
- main .grilla{
-  grid-template-columns: repeat(2, 330px);
-  grid-template-areas: 
-  "portafolio5 portafolio1"
-  "portafolio6 portafolio3"
-  "portafolio4 portafolio2"
-  ;
-}
+footer{
+  text-align: right;
+  padding: 20px;
+  color: #4895b3;
 }
 
-@media(max-width:576px){
- main .grilla{
-  grid-template-columns: repeat(1, 330px);
-  grid-template-areas: 
-  "portafolio5"
-  "portafolio3"
-  "portafolio6"
-  "portafolio4"
-  "portafolio2"
-  "portafolio1"
-  ;
-}
-}
+/* == Grilla o Grid == */ 
 
-/* Grid */
 .grilla {
   display: grid;
   grid-template-columns: 300px 330px 300px;
@@ -191,46 +196,44 @@ header nav ul li a:hover{
   grid-area: portafolio6;
 }
 
-main{
-  display: flex;
-  flex-direction: column;
-  align-items: center;   
-  justify-content: center; 
-  text-align: center;   
-  min-height: 80vh; 
-  padding: 120px 40px 40px;
-  background-color:#e6edf0
-    }
+/* == Media Queries - Diseños responsivos == */
 
-.servicio h1{
-  text-align: center;
-  margin-bottom: 30px;
-}   
+@media(max-width:991px){
+  header .hamburguesa{
+   display: block;
+ }
+
+ header nav{
+  display: none;
+
+} 
+ main .grilla{
+  grid-template-columns: repeat(2, 330px);
+  grid-template-areas: 
+  "portafolio5 portafolio1"
+  "portafolio6 portafolio3"
+  "portafolio4 portafolio2"
+  ;
+}
+}
+
+@media(max-width:576px){
+ main .grilla{
+  grid-template-columns: repeat(1, 330px);
+  grid-template-areas: 
+  "portafolio5"
+  "portafolio3"
+  "portafolio6"
+  "portafolio4"
+  "portafolio2"
+  "portafolio1"
+  ;
+}
+}
+
+
+
+
+
+
   
-     
-      main{
-        font-weight: 100;
-        color: #19413d;
-      }
-      main a{
-         color: #19413d;
-         text-decoration: none;
-    
-      }
-      
-      .centrada{
-        display: block;
-        margin: 20px auto;
-      }
-
-
-      h4{
-        text-align: center;
-      }
-
-
-    footer{
-      text-align: right;
-      padding: 20px;
-      color: #4895b3;
-    }

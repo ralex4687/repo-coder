@@ -1,0 +1,19 @@
+# Directorios y archivos generados automáticamente por el sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias (si usas npm, Node.js, o paquetes instalados)
+/node_modules
+
+# Archivos de logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de configuración de Visual Studio Code (opcional, si no quieres compartir tu configuración de espacio de trabajo)
+.vscode/
+
+# Archivos de backups o temporales
+*.swp
+*.bak
+*~
