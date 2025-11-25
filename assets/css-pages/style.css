@@ -107,20 +107,15 @@ footer{
 
 .grilla {
   display: grid;
-  grid-template-columns: 300px 330px 300px;
-  grid-template-areas:
-    "portafolio5 portafolio1 portafolio3"
-    "portafolio2 portafolio6 portafolio4";
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
   width: 100%;
   justify-content: center;
   align-content: center;
-  row-gap: 20px;
-  column-gap: 20px;
 }
 
 .grilla > div {
   position: relative;
-  display: grid;
   overflow: hidden;
 }
 
@@ -128,12 +123,10 @@ footer{
   width: 100%;
   height: 250px;
   object-fit: cover;
-  grid-area: 1 / 1;
   border-radius: 5px;
   z-index: 1;
   transition: transform 0.3s ease;
 }
-
 
 .grilla > div::after {
   content: '';
@@ -175,25 +168,6 @@ footer{
 
 .grilla > div:hover img {
   transform: scale(1.05);
-}
-
-.grilla div:first-child {
-  grid-area: portafolio1;
-}
-.grilla div:nth-child(2) {
-  grid-area: portafolio2;
-}
-.grilla div:nth-child(3) {
-  grid-area: portafolio3;
-}
-.grilla div:nth-child(4) {
-  grid-area: portafolio4;
-}
-.grilla div:nth-child(5) {
-  grid-area: portafolio5;
-}
-.grilla div:last-child {
-  grid-area: portafolio6;
 }
 
 /* == Media Queries - Diseños responsivos == */
