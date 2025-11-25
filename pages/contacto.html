@@ -19,8 +19,8 @@
 <body>
 
   <!-- HEADER -->
-  <header>
-    <nav class="navbar navbar-expand-lg container">
+<header>
+    <nav class="navbar navbar-expand-lg">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <div class="logo">
@@ -62,38 +62,51 @@
 
 
 
-    <main>
-      <section>
-        <h1>Contáctenos</h1>
-        
-        <P>Dirección: Atenas 2800, CABA, Buenos Aires</P>
-        <p>Telefono: 112289-2190</p>
-        <p>Email: renefg.4687@icloud.com</p>
+   <main class="py-5">
+      <div class="container">
+        <section class="text-center mb-5">
+          <h1 class="fw-bold">Contáctenos</h1>
+          <p>Dirección: Atenas 2800, CABA, Buenos Aires</p>
+          <p>Telefono: 112289-2190</p>
+          <p>Email: renefg.4687@icloud.com</p>
+        </section>
 
-        <h3>Deja un mensaje:</h3>
+        <section class="row justify-content-center">
+          <div class="col-lg-8 col-md-10">
+            <h3 class="mb-4 text-center">Deja un mensaje:</h3>
    
-        <form action="" class="form">
-          <input type="text">
-        </form>
-     
-         <form action="../Pages/index.html" method="get">
-        <label for="nombre">Nombre:</label>
-        <input type="text" name="nombre y apellido" id="nombre">
+            <form action="../Pages/index.html" method="get">
+              
+              <div class="row mb-3">
+                
+                <div class="col-md-6 mb-3 mb-md-0">
+                  <label for="nombre" class="form-label">Nombre:</label>
+                  <input type="text" name="nombre y apellido" id="nombre" class="form-control" required>
+                </div>
 
-        <label for="Email">Email:</label>
-        <input type="email" name="email" id="email">
+                <div class="col-md-6">
+                  <label for="email" class="form-label">Email:</label>
+                  <input type="email" name="email" id="email" class="form-control" required>
+                </div>
+              </div>
 
-        <label for="mensaje">Mensaje:</label>
-        <textarea name="mensaje" id="mensaje"></textarea>
-        </select>
+              <div class="mb-3">
+                <label for="mensaje" class="form-label">Mensaje:</label>
+                <textarea name="mensaje" id="mensaje" class="form-control" rows="5" required></textarea>
+              </div>
 
-        <input type="submit" value="Enviar">
-      </form>
+              <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg mt-3">Enviar Mensaje</button>
+              </div>
+            </form>
+          </div>
+        </section>
 
-     <ul>
-      <h4><a href="/index.html">Volver a Inicio</a></h4>
-    </ul>
-     </section>
+        <div class="text-center mt-5">
+          <h4><a href="/index.html" class="text-decoration-none">Volver a Inicio</a></h4>
+        </div>
+
+      </div>
     </main>
 
 <footer class="text-center py-3 border-top">
