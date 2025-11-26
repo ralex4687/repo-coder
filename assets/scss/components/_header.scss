@@ -1,19 +1,14 @@
-  
  @use '../abstracts/variables' as *;
-@use '../abstracts/mixins' as *;
 
 header {
   background-color: $color-primario;
   padding: $padding-header;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
 
   h1 {
     color: $color-texto-main;
     font-weight: $font-weight-main;
-    font-size: $font-size-lg;
   }
 
   nav {
@@ -26,15 +21,12 @@ header {
       gap: 10px;
       margin: 0;
       padding: 0;
-      position: relative;
 
       li {
-        position: relative;
-
         a {
           text-decoration: none;
           font-weight: bold;
-          font-size: $font-size-base;
+          font-size: 1rem;
           color: $color-secundario;
           transition: color 0.3s ease;
 
@@ -54,7 +46,6 @@ header {
           position: absolute;
           width: 150px;
           background: $color-primario;
-          z-index: 10;
         }
       }
     }
@@ -63,55 +54,91 @@ header {
   .navbar-brand img {
     height: 50px;
     width: auto;
-    transition: transform 0.3s ease;
-
-    &:hover {
-      transform: scale(1.05);
-    }
   }
 
   .hamburguesa {
     color: $color-fondo;
     font-size: 30px;
     display: none;
-    cursor: pointer;
   }
 
   .dropdown-menu {
     background-color: rgba(52, 129, 122, 0.8);
     border: none;
   }
-
-  
-  @include respond-to(tablet) {
-    flex-direction: column;
-    align-items: center;
-
-    nav ul {
-      flex-direction: column;
-      gap: 5px;
-    }
-  }
-
-  @include respond-to(mobile) {
-    padding: 1rem;
-
-    .hamburguesa {
-      display: block;
-    }
-
-    nav {
-      display: none;
-    }
-
-    &.active nav {
-      display: flex;
-      flex-direction: column;
-    }
-  }
 }
-
 
 #navbarSupportedContent .nav-link {
   color: $color-secundario;
 }
+
+/* === GRILLA / GRID === */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+
+  > div {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+      border-radius: 5px;
+      z-index: 1;
+      transition: transform 0.3s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
+    }
+
+    &::after {
+      content: "";
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      background-color: rgba(40, 39, 39, 0.5);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      z-index: 2;
+    }
+
+    p {
+      grid-area: 1 / 1;
+      align-self: center;
+      justify-self: center;
+      background-color: rgba(0, 0, 0, 0.5);
+      padding: 10px 20px;
+      border-radius: 5px;
+      text-align: center;
+      z-index: 3;
+      color: white;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    &:hover::after {
+      opacity: 1;
+    }
+
+    &:hover p {
+      opacity: 1;
+    }
+  }
+}
+
+/* === FOOTER === */
+footer {
+  text-align: right;
+  padding: 20px;
+  color: $color-footer;
+}
+ 
+ 

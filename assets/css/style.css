@@ -19,15 +19,16 @@ footer {
   position: relative;
   overflow: hidden;
 }
+
 .grilla > div img {
   width: 100%;
   height: 250px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 5px;
   z-index: 1;
   transition: transform 0.3s ease;
 }
+
 .grilla > div::after {
   content: "";
   width: 100%;
@@ -39,6 +40,7 @@ footer {
   transition: opacity 0.3s ease;
   z-index: 2;
 }
+
 .grilla > div p {
   grid-area: 1/1;
   align-self: center;
@@ -52,47 +54,49 @@ footer {
   opacity: 0;
   transition: opacity 0.3s ease;
 }
+
 .grilla > div:hover {
   cursor: pointer;
 }
-.grilla > div:hover::after {
-  opacity: 1;
-}
-.grilla > div:hover p {
-  opacity: 1;
-}
+
 .grilla > div:hover img {
   transform: scale(1.05);
 }
 
+.grilla > div:hover::after {
+  opacity: 1;
+}
+
+.grilla > div:hover p {
+  opacity: 1;
+}
+
+/* === HEADER === */
 header {
   background-color: rgb(52, 129, 122);
   padding: 2rem;
   display: flex;
   justify-content: space-between;
-  align-items: center;
-  transition: all 0.3s ease;
 }
+
 header h1 {
   color: #19413d;
   font-weight: 400;
-  font-size: 1.25rem;
 }
+
 header nav {
   display: flex;
   align-items: center;
 }
+
 header nav ul {
   display: flex;
   list-style: none;
   gap: 10px;
   margin: 0;
   padding: 0;
-  position: relative;
 }
-header nav ul li {
-  position: relative;
-}
+
 header nav ul li a {
   text-decoration: none;
   font-weight: bold;
@@ -100,78 +104,40 @@ header nav ul li a {
   color: #9cded5;
   transition: color 0.3s ease;
 }
+
 header nav ul li a:hover {
   color: bisque;
 }
+
 header nav ul li .submenu {
   display: none;
   margin: 10px;
   padding: 8px 12px;
 }
+
 header nav ul li:hover .submenu {
   display: block;
   position: absolute;
   width: 150px;
   background: rgb(52, 129, 122);
-  z-index: 10;
 }
+
 header .navbar-brand img {
   height: 50px;
   width: auto;
-  transition: transform 0.3s ease;
 }
-header .navbar-brand img:hover {
-  transform: scale(1.05);
-}
+
 header .hamburguesa {
   color: #e6edf0;
   font-size: 30px;
   display: none;
-  cursor: pointer;
 }
+
 header .dropdown-menu {
   background-color: rgba(52, 129, 122, 0.8);
   border: none;
 }
-@media (max-width: 992px) {
-  header {
-    flex-direction: column;
-    align-items: center;
-  }
-  header nav ul {
-    flex-direction: column;
-    gap: 5px;
-  }
-}
-@media (max-width: 576px) {
-  header {
-    padding: 1rem;
-  }
-  header .hamburguesa {
-    display: block;
-  }
-  header nav {
-    display: none;
-  }
-  header.active nav {
-    display: flex;
-    flex-direction: column;
-  }
-}
 
 #navbarSupportedContent .nav-link {
   color: #9cded5;
-}/*# sourceMappingURL=style.css.map */
-
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
-body {
-  font-family: Arial, sans-serif;
-  background-color: #e6edf0;
-  color: #19413d;
-  line-height: 1.5;
 }
