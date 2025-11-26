@@ -1,128 +1,71 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
-
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Servicio de Higiene y Mantenimiento</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!--Bootstrap-->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+  <title>Fumiplus - Servicio de Sanidad y plagas</title>
 
-  <!--Fontawesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+  <!-- ENLACE AL CSS GENERADO (TU ARCHIVO) -->
+  <link rel="stylesheet" href="/assets/css/style.css">
 
-  <link rel="stylesheet" href="/assets/scss/style.scss">
+  <!-- Bootstrap opcional -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 
 <body>
+    <header class="site-header">
+    <div class="navbar-brand">
+      <a href="index.html"><img src="assets/img/logonew.jpg" alt="Fumiplus Logo"></a>
+    </div>
 
-  <!-- HEADER -->
-<header>
-    <nav class="navbar navbar-expand-lg container">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#">
-          <div class="logo">
-            <img src="./assets/img/logonew.jpg" alt="logo-fumiplus">
-          </div>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-          data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-          aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+    <i class="hamburguesa fas fa-bars" aria-label="Abrir menú" role="button" tabindex="0"></i>
 
-        <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          
-          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
-            
-            <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
-            <li class="nav-item"><a class="nav-link" href="./pages/empresa.html">Empresa</a></li>
-            
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="./pages/servicios.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Servicios
-              </a>
-              <ul class="dropdown-menu">
-                <li><a class="dropdown-item" href="#">Control de Plagas</a></li>
-                <li><a class="dropdown-item" href="#">Desobstrucciones de Cañerías</a></li>
-                <li><a class="dropdown-item" href="#">Limpieza de Tanques de Agua</a></li>
-              </ul>
-            </li>
-            
-            <li class="nav-item"><a class="nav-link" href="./pages/garantia.html">Garantía</a></li>
-            <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
+    <nav id="navbarSupportedContent" class="main-nav" aria-label="Navegación principal">
+      <ul class="nav-list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="pages/empresa.html">Empresa</a></li>
+        <li class="has-sub">
+          <a href="pages/servicios.html">Servicios ▾</a>
+          <ul class="submenu">
+            <li><a href="#">Control de Plagas</a></li>
+            <li><a href="#">Desobstrucciones</a></li>
+            <li><a href="#">Limpieza Tanques</a></li>
           </ul>
-        </div>
-      </div>
+        </li>
+        <li><a href="pages/garantia.html">Garantía</a></li>
+        <li><a href="pages/contacto.html">Contacto</a></li>
+      </ul>
     </nav>
   </header>
-<!-- Main-->
+  <script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const btn = document.querySelector('.hamburguesa');
+    const header = document.querySelector('header');
 
-  <main class="py-5">
-    <div class="container">
-      <div class="row align-items-center text-center text-md-start">
-        <div class="col-md-6 mb-4 mb-md-0">
-          <h1 class="fw-bold">Fumiplus - Servicio de Fumigación</h1>
-          <h2 class="text-secondary">Sanidad Ambiental</h2>
-          <p class="mt-4">
-            En Fumiplus, trabajamos para crear entornos más seguros, limpios y saludables.
-            Somos una empresa con amplia trayectoria dedicada al control y prevención de plagas,
-            brindando soluciones efectivas para hogares, empresas e instituciones.
-          </p>
-        </div>
+    if (btn) {
+      btn.addEventListener('click', () => {
+        header.classList.toggle('active');
+      });
+    }
+  });
+</script>
+</body>
 
-        <div class="col-md-6 text-center">
-          <img src="./assets/img/img-inicio.png" alt="photo-2" class="img-fluid rounded shadow">
-        </div>
-      </div>
-    </div>
 
-    <div class="container mt-5">
-      <div class="row g-4 text-start">
-        <div class="col-12 col-md-6 col-lg-4">
-          <p>Nuestros servicios incluyen:</p>
-          <ul>
-            <li>Control integral de plagas y roedores</li>
-            <li>Fumigaciones y tratamientos de desinsectación y desratización</li>
-            <li>Limpieza y desinfección de tanques de agua</li>
-            <li>Desobstrucción de cañerías</li>
-          </ul>
-        </div>
+  <main class="container">
+    <h1>Fumiplus - Servicio de Fumigación</h1>
+    <h2>Sanidad Ambiental</h2>
 
-        <div class="col-12 col-md-6 col-lg-4">
-          <h3><a href="./pages/empresa.html" class="text-decoration-none">Empresa</a></h3>
-          <p>
-            Contamos con un equipo técnico especializado y en constante capacitación, que ofrece asesoramiento
-            personalizado y aplica métodos seguros, modernos y respetuosos con el ambiente.
-          </p>
+    <p>En Fumiplus, trabajamos para crear entornos más seguros, limpios y saludables...</p>
 
-          <h3><a href="./pages/servicios.html" class="text-decoration-none">Servicios</a></h3>
-          <p>
-            Nos dedicamos a brindar soluciones integrales de desinfección, garantizando espacios limpios,
-            seguros y saludables.
-          </p>
-        </div>
-
-        <div class="col-12 col-md-6 col-lg-4">
-          <h3><a href="./pages/garantia.html" class="text-decoration-none">Garantía</a></h3>
-          <p>Nos comprometemos a ofrecer servicios de desinfección efectivos y seguros.</p>
-
-          <h3><a href="./pages/contacto.html" class="text-decoration-none">Contacto ✆</a></h3>
-          <p>Abrimos de lunes a sábados</p>
-          <p>Horario de 10:00 a 18:00</p>
-        </div>
-      </div>
-    </div>
+    <img src="assets/img/img-inicio.png" alt="Servicio" style="max-width:100%;height:auto;">
+    <!-- resto del contenido -->
   </main>
-<!-- Footer -->
-  <footer class="py-3 mt-5 border-top">
-    <div class="container text-center"> 
-      <p class="mb-0">© 2025 creado por Rene Fuentes</p>
-    </div>  
-  </footer>
-  </body>
 
-</html>
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-column">
+        <h4>Sobre Nosotros
+
 

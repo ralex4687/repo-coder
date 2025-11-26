@@ -162,3 +162,16 @@ header .dropdown-menu {
 #navbarSupportedContent .nav-link {
   color: #9cded5;
 }/*# sourceMappingURL=style.css.map */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #e6edf0;
+  color: #19413d;
+  line-height: 1.5;
+}
