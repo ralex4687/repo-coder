@@ -20,7 +20,7 @@
 
   <!-- HEADER -->
 <header>
-    <nav class="navbar navbar-expand-lg">
+    <nav class="navbar navbar-expand-lg container">
       <div class="container-fluid">
         <a class="navbar-brand" href="#">
           <div class="logo">
@@ -34,26 +34,25 @@
         </button>
 
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
-          <ul class="navbar-nav mb-2 mb-lg-0">
-          </ul>
-          <ul>
-            <li><a href="index.html">Inicio</a></li>
-            <li><a href="./pages/empresa.html">Empresa</a></li>
-            <li><a href="./pages/servicios.html">Servicios<i class="fa-solid fa-angle-down"></i></a>
-              <ul class="submenu nav-item">
-                <li class="nav-item">
-                  <a href="#">Control de Plagas</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Desobstrucciones de Cañerías</a>
-                </li>
-                <li class="nav-item">
-                  <a href="#">Limpieza de Tanques de Agua</a>
-                </li>
+          
+          <ul class="navbar-nav mb-2 mb-lg-0 ms-auto">
+            
+            <li class="nav-item"><a class="nav-link" href="./index.html">Inicio</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/empresa.html">Empresa</a></li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="./pages/servicios.html" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Servicios
+              </a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="#">Control de Plagas</a></li>
+                <li><a class="dropdown-item" href="#">Desobstrucciones de Cañerías</a></li>
+                <li><a class="dropdown-item" href="#">Limpieza de Tanques de Agua</a></li>
               </ul>
             </li>
-            <li class="nav-item"><a href="./pages/garantia.html">Garantía</a></li>
-            <li class="nav-item"><a href="./pages/contacto.html">Contacto</a></li>
+            
+            <li class="nav-item"><a class="nav-link" href="./pages/garantia.html">Garantía</a></li>
+            <li class="nav-item"><a class="nav-link" href="./pages/contacto.html">Contacto</a></li>
           </ul>
         </div>
       </div>

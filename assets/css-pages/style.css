@@ -58,7 +58,7 @@ header nav ul{
   padding: 0;}
 
 header .navbar-brand img {
-    height: 50px; /* Limita la altura del logo */
+    height: 50px; 
     width: auto;
 }
 
@@ -89,12 +89,17 @@ header nav ul li:hover .submenu{
   width: 150px;
   background: rgb(52, 129, 122)
 }
-
+#navbarSupportedContent .nav-link { 
+    color: #9cded5;
+}
 header nav ul li a{
   text-decoration: none;
-  color: #9cded5;
   font-weight: bold;
   font-size: 1rem;      
+}
+header .dropdown-menu {
+    background-color: rgba(52, 129, 122, 0.8);
+    border: none;
 }
 
 header nav ul li a:hover{
