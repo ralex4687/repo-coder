@@ -1,5 +1,5 @@
 
-@import 'abstracts/variables';
-@import 'abstracts/mixins';
-@import 'base/base';
-@import 'components/header';
+@use 'abstracts/variables' as *; 
+@use 'abstracts/mixins' as *;
+@use 'base/base';
+@use 'components/header';
