@@ -49,9 +49,11 @@
   </header>
 
   <!-- MAIN -->
-  <main class="container-fluid py-5">
+ <main class="container-fluid py-5">
     <h1 class="text-center mb-4">¿Quiénes somos?</h1>
-    <p class="text-justify">
+    
+    <section class="container"> 
+        <p class="text-justify">
       En Fumiplus nos dedicamos a proteger la salud de las personas y a mantener en perfectas condiciones los espacios donde
       viven y trabajan. Contamos con un equipo técnico altamente capacitado, que brinda asesoramiento personalizado y aplica
       métodos modernos, seguros y responsables con el ambiente. Además de nuestros servicios de control de plagas, también
@@ -59,8 +61,15 @@
       limpias, seguras y en correcto funcionamiento. Nuestro compromiso es ofrecer soluciones confiables y efectivas que
       generen tranquilidad y confianza en cada cliente.
     </p>
+  
+  </section>
 
-    <h3 class="mt-5">Misión</h3>
+    <section class="row mv-flexbox-section container mx-auto"> 
+      <div class="mv-container"> 
+        
+        <article class="mv-card">
+          
+          <h3>Misión</h3>
     <p>
       Nuestra misión es proteger la salud y el bienestar de nuestros clientes mediante servicios confiables, eficaces y
       sustentables, garantizando resultados duraderos y seguros. Trabajamos comprometidos con la mejora continua, aplicando
@@ -68,6 +77,9 @@
       Buscamos generar confianza a largo plazo, brindando atención profesional, transparente y orientada a las necesidades
       reales de cada cliente.
     </p>
+  </article>
+
+        <article class="mv-card">
 
     <h3>Visión</h3>
     <p>
@@ -78,6 +90,11 @@
       nuestros clientes y posicionándonos como una marca sinónimo de excelencia y compromiso.
     </p>
 
+    </article>
+        
+      </div>
+    </section>
+
     <div class="text-center my-4">
       <img src="../assets/img/serv6.jpg" class="img-fluid rounded shadow" width="400" alt="photo-3">
     </div>
@@ -86,28 +103,11 @@
       <h4><a href="../index.html" class="text-decoration-none">Volver a Inicio</a></h4>
     </div>
   </main>
-
   <!-- FOOTER -->
   <footer class="text-center py-3 border-top mt-5">
     <p class="mb-0">© 2025 creado por Rene Fuentes</p>
   </footer>
 
-  <!-- SCRIPT HAMBURGUESA -->
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      const btn = document.querySelector('.hamburguesa');
-      const nav = document.querySelector('nav');
-
-      if (btn) {
-        btn.addEventListener('click', () => {
-          nav.classList.toggle('active');
-        });
-      }
-    });
-  </script>
-
-  <!-- BOOTSTRAP JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

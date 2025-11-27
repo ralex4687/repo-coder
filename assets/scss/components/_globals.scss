@@ -1,0 +1,137 @@
+
+@use '../abstracts/variables' as var; 
+@use '../abstracts/mixins' as mix;   
+
+/* === HEADER === */
+header {
+  background-color: var.$color-primario;
+  padding: var.$padding-header;
+  display: flex;
+  justify-content: space-between;
+
+  h1 {
+    color: var.$color-texto-main;
+    font-weight: var.$font-weight-main;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    ul {
+      display: flex;
+      list-style: none;
+      gap: 10px;
+      margin: 0;
+      padding: 0;
+
+      li {
+        a {
+          text-decoration: none;
+          font-weight: bold;
+          font-size: 1rem;
+          color: var.$color-secundario;
+        
+          transition: all 0.3s ease-in-out; 
+
+          &:hover {
+            color: var.$color-hover;
+            
+            border-bottom: 2px solid var.$color-hover;
+            padding-bottom: 2px;
+          }
+        }
+
+        .submenu {
+          display: none;
+          margin: 10px;
+          padding: 8px 12px;
+        }
+
+        &:hover .submenu {
+          display: block;
+          position: absolute;
+          width: 150px;
+          background: var.$color-primario;
+        }
+      }
+    }
+  }
+
+  .navbar-brand img {
+    height: 50px;
+    width: auto;
+  }
+
+  .hamburguesa {
+    color: var.$color-fondo;
+    font-size: 30px;
+    display: none;
+  }
+
+  .dropdown-menu {
+    background-color: rgba(52, 129, 122, 0.8);
+    border: none;
+  }
+  
+
+  @include mix.respond-to(tablet) {
+    padding: 1rem;
+  }
+}
+
+#navbarSupportedContent .nav-link {
+  color: var.$color-secundario;
+}
+
+
+/* === GRILLA / GRID  === */
+.grilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  width: 100%;
+  justify-content: center;
+  align-content: center;
+  
+}
+
+
+/* === FOOTER === */
+footer {
+  text-align: right;
+  padding: 20px;
+  color: var.$color-footer; 
+}
+
+
+/* === FLEXBOX MISION / VISION  === */
+.mv-container {
+    display: flex;
+    gap: 30px; 
+    margin: 3rem 0;
+    
+    .mv-card {
+        flex: 1 1 50%; 
+        padding: 20px;
+        border-left: 5px solid var.$color-primario; 
+
+        h3 {
+            color: var.$color-texto-main;
+            margin-top: 0;
+        }
+    }
+
+    
+    @include mix.respond-to(tablet) { 
+        flex-direction: column; 
+        gap: 1.5rem; 
+
+        .mv-card {
+            border-left: none; 
+            border-bottom: 2px solid var.$color-primario; 
+        }
+    }
+}
+ 
+ 
