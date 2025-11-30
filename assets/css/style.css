@@ -1,5 +1,8 @@
 @charset "UTF-8";
-
+/* === COLORES === */
+/* === TIPOGRAFÍA === */
+/* === SPACING === */
+/* === FOOTER === */
 footer {
   text-align: right;
   padding: 20px;
@@ -71,6 +74,10 @@ header {
   padding: 2rem;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1030;
 }
 header h1 {
   color: #19413d;
@@ -109,69 +116,4 @@ header nav ul li:hover .submenu {
   position: absolute;
   width: 150px;
   background: rgb(52, 129, 122);
-}
-header .navbar-brand img {
-  height: 50px;
-  width: auto;
-}
-header .hamburguesa {
-  color: #e6edf0;
-  font-size: 30px;
-  display: none;
-}
-header .dropdown-menu {
-  background-color: rgba(52, 129, 122, 0.8);
-  border: none;
-}
-@media (max-width: 992px) {
-  header {
-    padding: 1rem;
-  }
-}
-
-#navbarSupportedContent .nav-link {
-  color: #9cded5;
-}
-
-/* === GRILLA / GRID  === */
-.grilla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  align-content: center;
-}
-
-/* === FOOTER === */
-footer {
-  text-align: right;
-  padding: 20px;
-  color: #4895b3;
-}
-
-/* === FLEXBOX MISION / VISION  === */
-.mv-container {
-  display: flex;
-  gap: 30px;
-  margin: 3rem 0;
-}
-.mv-container .mv-card {
-  flex: 1 1 50%;
-  padding: 20px;
-  border-left: 5px solid rgb(52, 129, 122);
-}
-.mv-container .mv-card h3 {
-  color: #19413d;
-  margin-top: 0;
-}
-@media (max-width: 992px) {
-  .mv-container {
-    flex-direction: column;
-    gap: 1.5rem;
-  }
-  .mv-container .mv-card {
-    border-left: none;
-    border-bottom: 2px solid rgb(52, 129, 122);
-  }
 }/*# sourceMappingURL=style.css.map */
