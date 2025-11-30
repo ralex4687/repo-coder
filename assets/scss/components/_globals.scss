@@ -3,12 +3,18 @@
 @use '../abstracts/mixins' as mix;   
 
 /* === HEADER === */
-header {
+header { 
   background-color: var.$color-primario;
   padding: var.$padding-header;
   display: flex;
   justify-content: space-between;
-
+  
+  
+  position: fixed; 
+  width: 100%;     
+  top: 0;          
+  z-index: 1030;
+  
   h1 {
     color: var.$color-texto-main;
     font-weight: var.$font-weight-main;
@@ -56,82 +62,5 @@ header {
         }
       }
     }
-  }
-
-  .navbar-brand img {
-    height: 50px;
-    width: auto;
-  }
-
-  .hamburguesa {
-    color: var.$color-fondo;
-    font-size: 30px;
-    display: none;
-  }
-
-  .dropdown-menu {
-    background-color: rgba(52, 129, 122, 0.8);
-    border: none;
-  }
-  
-
-  @include mix.respond-to(tablet) {
-    padding: 1rem;
-  }
-}
-
-#navbarSupportedContent .nav-link {
-  color: var.$color-secundario;
-}
-
-
-/* === GRILLA / GRID  === */
-.grilla {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: 20px;
-  width: 100%;
-  justify-content: center;
-  align-content: center;
-  
-}
-
-
-/* === FOOTER === */
-footer {
-  text-align: right;
-  padding: 20px;
-  color: var.$color-footer; 
-}
-
-
-/* === FLEXBOX MISION / VISION  === */
-.mv-container {
-    display: flex;
-    gap: 30px; 
-    margin: 3rem 0;
-    
-    .mv-card {
-        flex: 1 1 50%; 
-        padding: 20px;
-        border-left: 5px solid var.$color-primario; 
-
-        h3 {
-            color: var.$color-texto-main;
-            margin-top: 0;
-        }
-    }
-
-    
-    @include mix.respond-to(tablet) { 
-        flex-direction: column; 
-        gap: 1.5rem; 
-
-        .mv-card {
-            border-left: none; 
-            border-bottom: 2px solid var.$color-primario; 
-        }
-    }
-}
- 
- 
+  } 
+} 
