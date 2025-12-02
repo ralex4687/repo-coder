@@ -68,20 +68,29 @@ footer {
   transform: scale(1.05);
 }
 
-/* === HEADER === */
+/* === HEADER (SOLUCIÓN DEFINITIVA DE ALTURA) === */
 header {
   background-color: rgb(52, 129, 122);
   padding: 2rem;
-  display: flex;
-  justify-content: space-between;
+  /* PROPIEDADES DE FIJACIÓN */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1030;
+  /* 1. ANULACIÓN DE LA ALTURA DEL CONTENEDOR DE BOOTSTRAP */
+  /* 2. ESTILOS DEL LOGO (MÁXIMA ESPECIFICIDAD DIRECTA) */
+  /* 3. Estilos de navegación y otros elementos anidados */
 }
-header h1 {
-  color: #19413d;
-  font-weight: 400;
+header .navbar {
+  padding: 0 !important; /* Anulación total del padding vertical */
+  min-height: 60px !important; /* Altura mínima para el menú */
+}
+header .logo-fumiplus { /* APUNTAMOS A LA CLASE PERSONALIZADA AÑADIDA AL IMG */
+  height: 50px !important; /* 🛑 FUERZA ABSOLUTA DE ALTURA */
+  width: auto !important; /* Evita el estiramiento horizontal */
+  max-width: 150px !important; /* Establece un límite de ancho para la imagen */
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 header nav {
   display: flex;
@@ -98,7 +107,7 @@ header nav ul li a {
   text-decoration: none;
   font-weight: bold;
   font-size: 1rem;
-  color: #9cded5;
+  color: #9cded5 !important;
   transition: all 0.3s ease-in-out;
 }
 header nav ul li a:hover {
@@ -116,4 +125,14 @@ header nav ul li:hover .submenu {
   position: absolute;
   width: 150px;
   background: rgb(52, 129, 122);
+}
+header h1 {
+  color: #19413d;
+  font-weight: 400;
+}
+
+/* === FIN HEADER === */
+/* COMPENSACIÓN DEL CONTENIDO */
+main {
+  padding-top: 90px !important;
 }/*# sourceMappingURL=style.css.map */

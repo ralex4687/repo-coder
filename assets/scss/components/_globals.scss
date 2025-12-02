@@ -1,32 +1,30 @@
 @use '../abstracts/variables' as var; 
 @use '../abstracts/mixins' as mix;   
 
-/* === HEADER (SOLUCIÓN DEFINITIVA DE ALTURA) === */
+/* === HEADER  === */
 header { 
   background-color: var.$color-primario;
   padding: var.$padding-header;
-  
-  /* PROPIEDADES DE FIJACIÓN */
+ 
   position: fixed; 
   width: 100%;     
   top: 0;          
   z-index: 1030;
 
-  /* 1. ANULACIÓN DE LA ALTURA DEL CONTENEDOR DE BOOTSTRAP */
+  
   .navbar {
-    padding: 0 !important; /* Anulación total del padding vertical */
-    min-height: 60px !important; /* Altura mínima para el menú */
+    padding: 0 !important; 
+    min-height: 60px !important; 
   }
   
-  /* 2. ESTILOS DEL LOGO (MÁXIMA ESPECIFICIDAD DIRECTA) */
-  .logo-fumiplus { /* APUNTAMOS A LA CLASE PERSONALIZADA AÑADIDA AL IMG */
-    height: 50px !important; /* 🛑 FUERZA ABSOLUTA DE ALTURA */
-    width: auto !important; /* Evita el estiramiento horizontal */
-    max-width: 150px !important; /* Establece un límite de ancho para la imagen */
+  
+  .logo-fumiplus { 
+    height: 50px !important; 
+    width: auto !important; 
+    max-width: 150px !important; 
     object-fit: contain;
   }
   
-  /* 3. Estilos de navegación y otros elementos anidados */
   nav {
     display: flex;
     align-items: center;
@@ -76,9 +74,7 @@ header {
     font-weight: var.$font-weight-main;
   }
 } 
-/* === FIN HEADER === */
 
-/* COMPENSACIÓN DEL CONTENIDO */
 main {
     padding-top: 90px !important; 
 }
