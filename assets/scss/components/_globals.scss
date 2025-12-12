@@ -76,13 +76,15 @@ header {
   }
 } 
 
-main > h1:first-child,
-main h1, 
-main h2 {
+/* REVERTIMOS MAIN A UN ESTADO LIMPIO */
+main {
+    padding-top: 0; /* Bootstrap manejará el offset */
+    margin-top: 0;
+    overflow-x: hidden;
+}
+
+/* Neutralizamos H1/H2 por si acaso */
+main h1, main h2 {
     margin-top: 0 !important; 
     margin-bottom: 0.5rem;
 }
-main {
-    padding-top: 150px !important; 
-    overflow-x: hidden;
-} 
