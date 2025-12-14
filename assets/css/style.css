@@ -70,6 +70,23 @@ footer {
 .grilla > div:hover img {
   transform: scale(1.05);
 }
+/* --- ESTILOS PARA HOVER EN SERVICIOS --- */
+
+.card {
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
+    overflow: hidden; 
+}
+
+.card:hover {
+    transform: scale(1.05); 
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important; 
+    z-index: 10; 
+    position: relative; 
+}
+
+.card:hover img {
+    transform: scale(1); 
+}
 
 /* === HEADER  === */
 header {
