@@ -126,6 +126,42 @@ header h1 {
   color: #19413d;
   font-weight: 400;
 }
+/* === SLIDER ANIMADO (INICIO) === */
+
+.slider-animado {
+    margin: 0 auto; 
+    width: 720px; 
+    height: 480px; 
+    overflow: hidden; 
+    border-radius: 8px; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.slider-track {
+    width: 300%; 
+    height: 100%;
+    display: flex;
+    animation: slide-show 15s infinite ease-in-out; 
+}
+
+.slider-track img {
+    width: 720px; 
+    height: 100%;
+    flex-shrink: 0; 
+    object-fit: cover; 
+}
+
+/* --- KEYFRAMES --- */
+
+@keyframes slide-show {
+    0% { transform: translateX(0); }
+    20% { transform: translateX(0); } 
+    33% { transform: translateX(-720px); } 
+    53% { transform: translateX(-720px); }
+    66% { transform: translateX(-1440px); } 
+    86% { transform: translateX(-1440px); }
+    100% { transform: translateX(0); } 
+}
 
 main {
   padding-top: 90px !important;
