@@ -8,7 +8,10 @@ footer {
   padding: 20px;
   color: #4895b3;
 }
-
+.redes-sociales a:hover i {
+    color:#4895b3 !important;
+    transition: color 0.3s ease;
+}
 /* === GRILLA / GRID === */
 .grilla {
   display: grid;
