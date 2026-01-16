@@ -8,10 +8,7 @@ footer {
   padding: 20px;
   color: #4895b3;
 }
-.redes-sociales a:hover i {
-    color:#4895b3 !important;
-    transition: color 0.3s ease;
-}
+
 /* === GRILLA / GRID === */
 .grilla {
   display: grid;
@@ -70,35 +67,19 @@ footer {
 .grilla > div:hover img {
   transform: scale(1.05);
 }
-/* --- ESTILOS PARA HOVER EN SERVICIOS --- */
-
-.card {
-    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; 
-    overflow: hidden; 
-}
-
-.card:hover {
-    transform: scale(1.05); 
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2) !important; 
-    z-index: 10; 
-    position: relative; 
-}
-
-.card:hover img {
-    transform: scale(1); 
-}
 
 /* === HEADER  === */
 header {
   background-color: rgb(52, 129, 122);
-  padding: 2rem;
+  /* padding: var.$padding-header; */
   position: fixed;
   width: 100%;
   top: 0;
   z-index: 1030;
 }
 header .navbar {
-  padding: 0 !important;
+  padding-top: 20px !important;
+  padding-bottom: 20px !important;
   min-height: 60px !important;
 }
 header .logo-fumiplus {
@@ -146,43 +127,16 @@ header h1 {
   color: #19413d;
   font-weight: 400;
 }
-/* === SLIDER ANIMADO (INICIO) === */
 
-.slider-animado {
-    margin: 0 auto; 
-    width: 720px; 
-    height: 480px; 
-    overflow: hidden; 
-    border-radius: 8px; 
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.slider-track {
-    width: 300%; 
-    height: 100%;
-    display: flex;
-    animation: slide-show 15s infinite ease-in-out; 
-}
-
-.slider-track img {
-    width: 720px; 
-    height: 100%;
-    flex-shrink: 0; 
-    object-fit: cover; 
-}
-
-/* --- KEYFRAMES --- */
-
-@keyframes slide-show {
-    0% { transform: translateX(0); }
-    20% { transform: translateX(0); } 
-    33% { transform: translateX(-720px); } 
-    53% { transform: translateX(-720px); }
-    66% { transform: translateX(-1440px); } 
-    86% { transform: translateX(-1440px); }
-    100% { transform: translateX(0); } 
-}
-
+/* REVERTIMOS MAIN A UN ESTADO LIMPIO */
 main {
-  padding-top: 90px !important;
+  padding-top: 0; /* Bootstrap manejará el offset */
+  margin-top: 0;
+  overflow-x: hidden;
+}
+
+/* Neutralizamos H1/H2 por si acaso */
+main h1, main h2 {
+  margin-top: 0 !important;
+  margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
