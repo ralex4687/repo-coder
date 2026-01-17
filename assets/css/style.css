@@ -1,8 +1,5 @@
 @charset "UTF-8";
-/* === COLORES === */
-/* === TIPOGRAFÍA === */
-/* === SPACING === */
-/* === FOOTER === */
+
 footer {
   text-align: right;
   padding: 20px;
@@ -128,9 +125,8 @@ header h1 {
   font-weight: 400;
 }
 
-/* REVERTIMOS MAIN A UN ESTADO LIMPIO */
 main {
-  padding-top: 0; /* Bootstrap manejará el offset */
+  padding-top: 0; 
   margin-top: 0;
   overflow-x: hidden;
 }
@@ -140,3 +136,34 @@ main h1, main h2 {
   margin-top: 0 !important;
   margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
+
+body {
+  padding-top: 140px !important; /* Esto empuja todo hacia abajo */
+}
+
+/* 2. HACER QUE EL SLIDER SE MUEVA */
+.slider-animado {
+  width: 100%;
+  max-width: 720px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.slider-track {
+  display: flex;
+  width: 2160px; /* Ancho de las 3 imágenes juntas */
+  animation: slide-fumiplus 12s infinite ease-in-out;
+}
+
+.slider-track img {
+  width: 720px;
+  height: 480px;
+  flex-shrink: 0;
+}
+
+@keyframes slide-fumiplus {
+  0%, 30% { transform: translateX(0); }
+  35%, 65% { transform: translateX(-720px); }
+  70%, 95% { transform: translateX(-1440px); }
+  100% { transform: translateX(0); }
+}
