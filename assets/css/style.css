@@ -131,17 +131,16 @@ main {
   overflow-x: hidden;
 }
 
-/* Neutralizamos H1/H2 por si acaso */
 main h1, main h2 {
   margin-top: 0 !important;
   margin-bottom: 0.5rem;
 }/*# sourceMappingURL=style.css.map */
 
 body {
-  padding-top: 140px !important; /* Esto empuja todo hacia abajo */
+  padding-top: 140px !important;
 }
 
-/* 2. HACER QUE EL SLIDER SE MUEVA */
+
 .slider-animado {
   width: 100%;
   max-width: 720px;
@@ -151,7 +150,7 @@ body {
 
 .slider-track {
   display: flex;
-  width: 2160px; /* Ancho de las 3 imágenes juntas */
+  width: 2160px;
   animation: slide-fumiplus 12s infinite ease-in-out;
 }
 
