@@ -1,25 +1,24 @@
 @use '../abstracts/variables'; 
-@use '../abstracts/mixins'; // Importamos tus mixins para poder usarlos
+@use '../abstracts/mixins'; 
 
-/* === 1. EXTENDS (Esto cumple la consigna del Punto 10) === */
+/* === EXTENDS === */
 %transicion-base {
   transition: all 0.3s ease;
 }
 
-/* === 2. FOOTER === */
+/* === FOOTER === */
 footer {
   text-align: right;
   padding: 20px;
   color: variables.$color-footer; 
   
-  /* Uso de Mixin para tablets/móviles (Punto 10 y 6) */
   @include mixins.respond-to(mobile) {
-    text-align: center; /* En móviles queda mejor centrado */
+    text-align: center; 
     padding: 15px;
   }
 }
 
-/* === 3. GRILLA / GRID === */
+/* === GRILLA / GRID === */
 .grilla {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -29,7 +28,7 @@ footer {
   align-content: center;
   
   @include mixins.respond-to(mobile) {
-    gap: 10px; /* Menos espacio en móvil para evitar el desborde (Punto 12) */
+    gap: 10px; 
   }
  
   > div {
@@ -42,7 +41,7 @@ footer {
       object-fit: cover;
       border-radius: 5px;
       z-index: 1;
-      @extend %transicion-base; /* Implementación de Extend (Punto 10) */
+      @extend %transicion-base; 
     }
 
     &::after {
@@ -53,7 +52,7 @@ footer {
       inset: 0;
       background-color: rgba(40, 39, 39, 0.5);
       opacity: 0;
-      @extend %transicion-base; /* Implementación de Extend (Punto 10) */
+      @extend %transicion-base; 
       z-index: 2;
     }
 
@@ -68,7 +67,7 @@ footer {
       z-index: 3;
       color: white;
       opacity: 0;
-      @extend %transicion-base; /* Implementación de Extend (Punto 10) */
+      @extend %transicion-base; 
     }
 
     &:hover {

@@ -1,4 +1,4 @@
-﻿/* === 1. MAPA DE COLORES (Para cumplir la consigna del Punto 10) === */
+﻿/* === MAPA DE COLORES === */
 $paleta: (
   "primario": rgb(52, 129, 122),
   "secundario": #9cded5,
@@ -8,7 +8,7 @@ $paleta: (
   "footer": #4895b3
 );
 
-/* === 2. VARIABLES INDIVIDUALES (Las mantengo para que NO se rompa tu código actual) === */
+/* === VARIABLES INDIVIDUALES  === */
 $color-primario: map-get($paleta, "primario"); 
 $color-secundario: map-get($paleta, "secundario");         
 $color-texto-main: map-get($paleta, "texto-main");         
@@ -16,7 +16,7 @@ $color-hover: map-get($paleta, "hover");
 $color-fondo: map-get($paleta, "fondo");              
 $color-footer: map-get($paleta, "footer");            
 
-/* === 3. TIPOGRAFÍA Y SPACING === */
+/* === TIPOGRAFÍA Y SPACING === */
 $font-weight-main: 400;             
 $font-size-base: 1rem;               
 $font-size-sm: 0.875rem;           

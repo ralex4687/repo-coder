@@ -1,7 +1,7 @@
 @use '../abstracts/variables' as var; 
 @use '../abstracts/mixins' as mix;   
 
-/* === 1. HEADER (Punto 6: Ajuste de espaciados) === */
+/* === HEADER  === */
 header { 
   background-color: var.$color-primario;
   position: fixed; 
@@ -14,7 +14,7 @@ header {
     padding-bottom: 20px !important;
     min-height: 60px !important; 
 
-    /* Uso de Mixin para mejorar el espaciado en móviles (Punto 6) */
+    
     @include mix.respond-to(mobile) {
       padding-top: 10px !important;
       padding-bottom: 10px !important;
@@ -39,7 +39,7 @@ header {
       margin: 0;
       padding: 0;
 
-      /* Ajuste de menú para móviles (Punto 12: evita desborde) */
+      
       @include mix.respond-to(mobile) {
         gap: 5px; 
       }
@@ -53,7 +53,7 @@ header {
           transition: all 0.3s ease-in-out; 
 
           @include mix.respond-to(mobile) {
-            font-size: 0.85rem; /* Achicamos un poco la letra en cel */
+            font-size: 0.85rem; 
           }
 
           &:hover {
@@ -67,21 +67,21 @@ header {
   } 
 } 
 
-/* === 2. MAIN Y CONTENIDO (Punto 12: Control de desborde) === */
+/* === MAIN Y CONTENIDO === */
 main {
     padding-top: 0; 
     margin-top: 0;
-    overflow-x: hidden; /* Clave para aprobar el punto 12 */
+    overflow-x: hidden; 
 }
 
 .text-fumiplus {
     color: var.$color-primario !important; 
 }
 
-/* === 3. ANIMACIÓN DEL SLIDER (Punto 11 y 12: Responsive) === */
+/* === 3. ANIMACIÓN DEL SLIDER === */
 .slider-animado {
   width: 100%;
-  max-width: 720px; /* Asegura que no crezca más que la imagen */
+  max-width: 720px; 
   margin: 0 auto;
   overflow: hidden;
   border-radius: 8px;
@@ -89,13 +89,11 @@ main {
 
 .slider-track {
   display: flex;
-  /* Cambiamos el ancho fijo por uno porcentual para evitar scroll lateral */
   width: 300%; 
   animation: slide-fumiplus 12s infinite ease-in-out;
 }
 
 .slider-track img {
-  /* En lugar de 720px fijos, usamos 100% del contenedor para que sea elástico */
   width: 100%; 
   height: auto;
   max-height: 480px;
