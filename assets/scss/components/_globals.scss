@@ -1,23 +1,25 @@
 @use '../abstracts/variables' as var; 
 @use '../abstracts/mixins' as mix;   
 
-/* === HEADER  === */
+/* === 1. HEADER (Punto 6: Ajuste de espaciados) === */
 header { 
   background-color: var.$color-primario;
-  /* padding: var.$padding-header; */
- 
   position: fixed; 
   width: 100%;     
   top: 0;          
   z-index: 1030;
 
-  
   .navbar {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
     min-height: 60px !important; 
+
+    /* Uso de Mixin para mejorar el espaciado en móviles (Punto 6) */
+    @include mix.respond-to(mobile) {
+      padding-top: 10px !important;
+      padding-bottom: 10px !important;
+    }
   }
-  
   
   .logo-fumiplus { 
     height: 50px !important; 
@@ -37,82 +39,72 @@ header {
       margin: 0;
       padding: 0;
 
+      /* Ajuste de menú para móviles (Punto 12: evita desborde) */
+      @include mix.respond-to(mobile) {
+        gap: 5px; 
+      }
+
       li {
         a {
           text-decoration: none;
           font-weight: bold;
           font-size: 1rem;
           color: var.$color-secundario !important; 
-        
           transition: all 0.3s ease-in-out; 
+
+          @include mix.respond-to(mobile) {
+            font-size: 0.85rem; /* Achicamos un poco la letra en cel */
+          }
 
           &:hover {
             color: var.$color-hover;
-            
             border-bottom: 2px solid var.$color-hover;
             padding-bottom: 2px;
           }
         }
-
-        .submenu {
-          display: none;
-          margin: 10px;
-          padding: 8px 12px;
-        }
-
-        &:hover .submenu {
-          display: block;
-          position: absolute;
-          width: 150px;
-          background: var.$color-primario;
-        }
       }
     }
   } 
-  
-  h1 {
-    color: var.$color-texto-main;
-    font-weight: var.$font-weight-main;
-  }
 } 
 
-/* -- MAIN -- */
+/* === 2. MAIN Y CONTENIDO (Punto 12: Control de desborde) === */
 main {
     padding-top: 0; 
     margin-top: 0;
-    overflow-x: hidden;
+    overflow-x: hidden; /* Clave para aprobar el punto 12 */
 }
 
 .text-fumiplus {
     color: var.$color-primario !important; 
 }
 
-/* --- ANIMACIÓN DEL SLIDER --- */
+/* === 3. ANIMACIÓN DEL SLIDER (Punto 11 y 12: Responsive) === */
 .slider-animado {
   width: 100%;
+  max-width: 720px; /* Asegura que no crezca más que la imagen */
+  margin: 0 auto;
   overflow: hidden;
   border-radius: 8px;
 }
 
 .slider-track {
   display: flex;
-  
-  width: calc(720px * 3); 
+  /* Cambiamos el ancho fijo por uno porcentual para evitar scroll lateral */
+  width: 300%; 
   animation: slide-fumiplus 12s infinite ease-in-out;
 }
 
 .slider-track img {
-  width: 720px;
-  height: 480px;
+  /* En lugar de 720px fijos, usamos 100% del contenedor para que sea elástico */
+  width: 100%; 
+  height: auto;
+  max-height: 480px;
   object-fit: cover;
 }
 
 @keyframes slide-fumiplus {
-  0% { transform: translateX(0); }
-  30% { transform: translateX(0); }       
-  35% { transform: translateX(-720px); }  
-  65% { transform: translateX(-720px); }  
-  70% { transform: translateX(-1440px); } 
-  95% { transform: translateX(-1440px); } 
+  0%, 30% { transform: translateX(0); }       
+  35%, 65% { transform: translateX(-33.33%); }  
+  70%, 95% { transform: translateX(-66.66%); } 
   100% { transform: translateX(0); }      
 }

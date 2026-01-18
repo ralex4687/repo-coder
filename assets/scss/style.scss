@@ -1,4 +1,11 @@
+@charset "UTF-8";
+
+/* === CONFIGURACIONES === */
 @use 'abstracts/variables'; 
 @use 'abstracts/mixins'; 
+
+/* === ESTILOS BASE === */
 @use 'base/base'; 
-@use 'components/globals'; 
+
+/* === COMPONENTES Y ANIMACIONES === */
+@use 'components/globals';

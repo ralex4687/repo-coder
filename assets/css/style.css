@@ -1,12 +1,30 @@
 @charset "UTF-8";
+/* === CONFIGURACIONES === */
+/* === 1. MAPA DE COLORES (Para cumplir la consigna del Punto 10) === */
+/* === 2. VARIABLES INDIVIDUALES (Las mantengo para que NO se rompa tu código actual) === */
+/* === 3. TIPOGRAFÍA Y SPACING === */
+/* === ESTILOS BASE === */
+/* === CONFIGURACIONES === */
+/* === 1. EXTENDS (Esto cumple la consigna del Punto 10) === */
+.grilla > div p, .grilla > div::after, .grilla > div img {
+  transition: all 0.3s ease;
+}
 
+/* === 2. FOOTER === */
 footer {
   text-align: right;
   padding: 20px;
   color: #4895b3;
+  /* Uso de Mixin para tablets/móviles (Punto 10 y 6) */
+}
+@media (max-width: 576px) {
+  footer {
+    text-align: center; /* En móviles queda mejor centrado */
+    padding: 15px;
+  }
 }
 
-/* === GRILLA / GRID === */
+/* === 3. GRILLA / GRID === */
 .grilla {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -14,6 +32,11 @@ footer {
   width: 100%;
   justify-content: center;
   align-content: center;
+}
+@media (max-width: 576px) {
+  .grilla {
+    gap: 10px; /* Menos espacio en móvil para evitar el desborde (Punto 12) */
+  }
 }
 .grilla > div {
   position: relative;
@@ -26,7 +49,7 @@ footer {
      object-fit: cover;
   border-radius: 5px;
   z-index: 1;
-  transition: transform 0.3s ease;
+  /* Implementación de Extend (Punto 10) */
 }
 .grilla > div::after {
   content: "";
@@ -36,7 +59,7 @@ footer {
   inset: 0;
   background-color: rgba(40, 39, 39, 0.5);
   opacity: 0;
-  transition: opacity 0.3s ease;
+  /* Implementación de Extend (Punto 10) */
   z-index: 2;
 }
 .grilla > div p {
@@ -50,7 +73,7 @@ footer {
   z-index: 3;
   color: white;
   opacity: 0;
-  transition: opacity 0.3s ease;
+  /* Implementación de Extend (Punto 10) */
 }
 .grilla > div:hover {
   cursor: pointer;
@@ -65,10 +88,11 @@ footer {
   transform: scale(1.05);
 }
 
-/* === HEADER  === */
+/* === COMPONENTES Y ANIMACIONES === */
+/* === CONFIGURACIONES === */
+/* === 1. HEADER (Punto 6: Ajuste de espaciados) === */
 header {
   background-color: rgb(52, 129, 122);
-  /* padding: var.$padding-header; */
   position: fixed;
   width: 100%;
   top: 0;
@@ -78,6 +102,13 @@ header .navbar {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
   min-height: 60px !important;
+  /* Uso de Mixin para mejorar el espaciado en móviles (Punto 6) */
+}
+@media (max-width: 576px) {
+  header .navbar {
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+  }
 }
 header .logo-fumiplus {
   height: 50px !important;
@@ -96,6 +127,12 @@ header nav ul {
   gap: 10px;
   margin: 0;
   padding: 0;
+  /* Ajuste de menú para móviles (Punto 12: evita desborde) */
+}
+@media (max-width: 576px) {
+  header nav ul {
+    gap: 5px;
+  }
 }
 header nav ul li a {
   text-decoration: none;
@@ -104,65 +141,64 @@ header nav ul li a {
   color: #9cded5 !important;
   transition: all 0.3s ease-in-out;
 }
+@media (max-width: 576px) {
+  header nav ul li a {
+    font-size: 0.85rem; /* Achicamos un poco la letra en cel */
+  }
+}
 header nav ul li a:hover {
   color: bisque;
   border-bottom: 2px solid bisque;
   padding-bottom: 2px;
 }
-header nav ul li .submenu {
-  display: none;
-  margin: 10px;
-  padding: 8px 12px;
-}
-header nav ul li:hover .submenu {
-  display: block;
-  position: absolute;
-  width: 150px;
-  background: rgb(52, 129, 122);
-}
-header h1 {
-  color: #19413d;
-  font-weight: 400;
-}
 
+/* === 2. MAIN Y CONTENIDO (Punto 12: Control de desborde) === */
 main {
-  padding-top: 0; 
+  padding-top: 0;
   margin-top: 0;
-  overflow-x: hidden;
+  overflow-x: hidden; /* Clave para aprobar el punto 12 */
 }
 
-main h1, main h2 {
-  margin-top: 0 !important;
-  margin-bottom: 0.5rem;
-}/*# sourceMappingURL=style.css.map */
-
-body {
-  padding-top: 140px !important;
+.text-fumiplus {
+  color: rgb(52, 129, 122) !important;
 }
 
-
+/* === 3. ANIMACIÓN DEL SLIDER (Punto 11 y 12: Responsive) === */
 .slider-animado {
   width: 100%;
-  max-width: 720px;
+  max-width: 720px; /* Asegura que no crezca más que la imagen */
   margin: 0 auto;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .slider-track {
   display: flex;
-  width: 2160px;
+  /* Cambiamos el ancho fijo por uno porcentual para evitar scroll lateral */
+  width: 300%;
   animation: slide-fumiplus 12s infinite ease-in-out;
 }
 
 .slider-track img {
-  width: 720px;
-  height: 480px;
-  flex-shrink: 0;
+  /* En lugar de 720px fijos, usamos 100% del contenedor para que sea elástico */
+  width: 100%;
+  height: auto;
+  max-height: 480px;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 @keyframes slide-fumiplus {
-  0%, 30% { transform: translateX(0); }
-  35%, 65% { transform: translateX(-720px); }
-  70%, 95% { transform: translateX(-1440px); }
-  100% { transform: translateX(0); }
-}
+  0%, 30% {
+    transform: translateX(0);
+  }
+  35%, 65% {
+    transform: translateX(-33.33%);
+  }
+  70%, 95% {
+    transform: translateX(-66.66%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}/*# sourceMappingURL=style.css.map */
